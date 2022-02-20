@@ -1,7 +1,52 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+<canvas id="myChart" width="600" height="400"></canvas>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js" integrity="sha256-Y26AMvaIfrZ1EQU49pf6H4QzVTrOI8m9wQYKkftBt4s=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@2.0.0/dist/chartjs-adapter-date-fns.bundle.min.js" integrity="sha256-xlxh4PaMDyZ72hWQ7f/37oYI0E2PrBbtzi1yhvnG+/E=" crossorigin="anonymous"></script>
+<script>
+    let ctx = document.getElementById("myChart");
+let myChart = new Chart(ctx, {
+  type: "line",
+  data: {
+    datasets: [
+      {
+        label: "Pie",
+        data: [
+          { x: "2021-01-01", y: 3 },
+          { x: "2021-02-01", y: 1 },
+          { x: "2021-03-01", y: 4 },
+          { x: "2021-04-01", y: 1 },
+          { x: "2021-05-01", y: 5 },
+          { x: "2021-06-01", y: 9 },
+          { x: "2021-07-01", y: 2 },
+          { x: "2021-08-01", y: 6 },
+          { x: "2021-09-01", y: 5 },
+          { x: "2021-10-01", y: 3 },
+          { x: "2021-11-01", y: 5 },
+          { x: "2021-12-01", y: 8 }
+        ],
+        borderColor: "#000000",
+        backgroundColor: "#00FF00"
+      }
+    ]
+  },
+  options: {
+    scales: {
+      x: {
+        type: "time",
+        min: "2021-01-01",
+        max: "2021-12-01"
+      },
+      y: {
+        type: "linear",
+        min: 0,
+        max: 10
+      }
+    }
+  }
+});
+
+</script>
 </body>
 </html>
